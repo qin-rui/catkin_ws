@@ -1,5 +1,6 @@
 #include "image_view.h"
 #include <cv_bridge/cv_bridge.h>
+#include <opencv2/opencv.hpp>
 
 
 ImageView::ImageView(const ros::NodeHandle& node)
@@ -9,7 +10,7 @@ ImageView::ImageView(const ros::NodeHandle& node)
     ROS_INFO("Subscribe topic: /cv_camera/image_raw");
 }
 
-void Imageview::OnImageMessage(const sensor_msgs::ImageConstPtr& msg)
+void ImageView::OnImageMessage(const sensor_msgs::ImageConstPtr& msg)
 {
     ROS_INFO("Image received...");
     cv_bridge::CvImageConstPtr cv_ptr = cv_bridge::toCvShare(msg, "bgr8");
