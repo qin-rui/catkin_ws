@@ -3,6 +3,6 @@
 ImageView::ImageView(const ros::NodeHandle& node)
 : _node(node)
 {
-
+    ROS_INFO("ImageVies is initiated.");
 }
 
